@@ -1,5 +1,6 @@
 package hello.typeconverter.type;
 
+import hello.formatter.MyNumberFormatter;
 import hello.typeconverter.converter.IntegerToStringConverter;
 import hello.typeconverter.converter.IpPortToStringConverter;
 import hello.typeconverter.converter.StringToIntegerConverter;
@@ -13,9 +14,13 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addFormatters(FormatterRegistry registry) {
-        registry.addConverter(new StringToIntegerConverter());
-        registry.addConverter(new IntegerToStringConverter());
+   //     registry.addConverter(new StringToIntegerConverter());
+ //       registry.addConverter(new IntegerToStringConverter());
         registry.addConverter(new IpPortToStringConverter());
         registry.addConverter(new StringToIpPortConverter());
+
+        //추가
+        registry.addFormatter(new MyNumberFormatter());
+
     }
 }
